@@ -148,12 +148,17 @@ nav {
 }
 .hero h1 {
   color: var(--pink);
-  font-size: 4rem;
+  font-size: 12rem;
+  width: 100%;
+  margin-top: -9.5rem;
+  margin-left: 15rem;
 }
 .hero h3 {
   color: var(--blue);
-  margin-top: -1rem;
-  font-size: 1.2rem;
+  margin-top: -5rem;
+  margin-left: 33rem;
+  width: 100%;
+  font-size: 2rem;
 }
 .hero h3 span {
   color: var(--pink);
@@ -168,16 +173,24 @@ nav {
 #about {
   background-color: var(--blue);
 }
+#about-bg {
+  height: 40rem;
+  width: 40rem;
+  border-radius: 100%;
+  transform: rotate(45deg);
+  position: relative;
+  z-index: 3;
+}
 .about-container {
-  grid-column: 1/ 6;
+  grid-column: 8/ 12;
   grid-row: 6/9;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.about-bg {
+.about-canvas-container {
   /* display: none; */
-  grid-column: 8/13;
+  grid-column: 1/5;
   margin-left: 5rem;
   grid-row: 5/13;
   border: 10px solid var(--dark);
@@ -191,10 +204,9 @@ nav {
   z-index: 2;
 }
 .about-black {
-  grid-column: 10/13;
+  grid-column: 1/2;
   grid-row: 1/13;
   background-color: var(--dark);
-  width: 2000px;
 }
 #about nav {
   color: var(--pink);
@@ -213,7 +225,23 @@ nav {
 #projects {
   background-color: var(--pink);
 }
+.projects-blue {
+  grid-column: 12/13;
+  grid-row: 1/13;
+  background-color: var(--blue);
+}
+#projects nav {
+  color: var(--yellow);
+}
+#projects li:hover {
+  color: var(--blue);
+}
 /* Contact */
 #contact {
   background-color: var(--yellow);
+}
+.contact-pink {
+  grid-column: 1/2;
+  grid-row: 1/13;
+  background-color: var(--pink);
 }
