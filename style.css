@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Permanent+Marker&display=swap');
+
+:root {
+  --dark: #0c090d;
+  --pink: #e01a4f;
+  --blue: #53b3cb;
+  --orange: #f15946;
+  --yellow: #f9c22e;
+
+  --mainFont: 'Josefin Sans', sans-serif;
+  --drawnFont: 'Permanent Marker', cursive;
+  --heavy: 700;
+  --medium: 500;
+  --regular: 400;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--mainFont);
+  font-weight: var(--regular);
+  background-color: var(--dark);
+}
+main {
+  /* position: absolute; */
+  margin-inline: auto;
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  /* width: 100%; */
+}
+li {
+  list-style: none;
+  margin-left: 1.5rem;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+ul {
+  display: flex;
+  margin: 0;
+}
+
+#home {
+  /* position: absolute; */
+  background-color: var(--dark);
+  overflow-x: hidden;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100vh;
+  max-width: 2000px;
+  margin-inline: auto;
+}
+nav {
+  grid-column: 2/9;
+  grid-row: 2;
+  z-index: 24;
+  margin-left: 1.1rem;
+}
+/* Home */
+.hero {
+  grid-column: 1/ 9;
+  grid-row: 6/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+#bg {
+  grid-column: 1/ 13;
+  grid-row: 1/13;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.canvas-bg {
+  /* display: none; */
+  grid-column: 6/13;
+  margin-left: 5rem;
+  grid-row: 6/13;
+  background-color: var(--blue);
+  margin-top: -0.2rem;
+  height: 250px;
+  width: 250px;
+  transform: rotate(45deg);
+  position: relative;
+}
+.canvas-bg::after {
+  background-image: url(./img/squares.svg);
+  /* background-size: contain; */
+  background-position: 5rem 20rem;
+  background-repeat: no-repeat;
+  position: absolute;
+  content: '';
+  width: 300px;
+  height: 500px;
+}
+.hero h1 {
+  color: var(--pink);
+  font-size: 4rem;
+}
+.hero h3 {
+  color: var(--blue);
+  margin-top: -1rem;
+  font-size: 1.2rem;
+}
+.hero h3 span {
+  color: var(--pink);
+}
+#home nav {
+  color: var(--orange);
+}
+#home li:hover {
+  color: var(--blue);
+}
+
+/* About me */
+
+#about {
+  background-color: var(--blue);
+}
+.about-container {
+  grid-column: 1/ 9;
+  grid-row: 6/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about nav {
+  color: var(--pink);
+}
+#about li:hover {
+  color: var(--yellow);
+}
+#about h1 {
+  color: var(--yellow);
+}
+#about h1 span {
+  color: var(--pink);
+}
+/* Projects */
+
+#projects {
+  background-color: var(--pink);
+}
+/* Contact */
+#contact {
+  background-color: var(--yellow);
+}
