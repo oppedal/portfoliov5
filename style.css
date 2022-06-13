@@ -25,10 +25,13 @@ main {
   /* position: absolute; */
   margin-inline: auto;
   height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 section {
   height: 100vh;
+  scroll-snap-align: start;
 }
 a {
   cursor: pointer;
@@ -52,7 +55,7 @@ ul {
 #home {
   /* position: absolute; */
   background-color: var(--dark);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .content {
   display: grid;
@@ -77,34 +80,71 @@ nav {
   align-items: center;
   z-index: 3;
 }
-#bg {
+/* #bg {
   grid-column: 1/ 13;
   grid-row: 1/13;
   width: 100%;
   height: 100%;
   z-index: 2;
+} */
+#bg {
+  height: 100%;
+  width: 100%;
 }
 .canvas-bg {
   /* display: none; */
-  grid-column: 6/13;
+  grid-column: 8/13;
   margin-left: 5rem;
-  grid-row: 6/13;
+  grid-row: 5/13;
   background-color: var(--blue);
-  margin-top: -0.2rem;
-  height: 250px;
-  width: 250px;
+  margin-top: -3rem;
+  height: 40rem;
+  width: 40rem;
   transform: rotate(45deg);
   position: relative;
 }
-.canvas-bg::after {
-  background-image: url(./img/squares.svg);
-  /* background-size: contain; */
-  background-position: 5rem 20rem;
-  background-repeat: no-repeat;
-  position: absolute;
+.menu {
+  grid-column: 8/13;
+  margin-left: 4rem;
+  grid-row: 5/13;
+  margin-top: -2rem;
+  height: 40rem;
+  width: 40rem;
+  transform: rotate(45deg);
+  z-index: 25;
+}
+.menu::before {
   content: '';
+  background-image: url(./img/squares.svg);
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  left: 14rem;
+  bottom: -45rem;
+  position: absolute;
+  height: 100%;
   width: 300px;
-  height: 500px;
+}
+
+.boxes {
+  background-image: url(./img/squares.svg);
+  background-size: 10rem;
+  background-repeat: no-repeat;
+  background-color: #53b3cb;
+  transform: rotate(45deg);
+  grid-column: 3/9;
+  grid-row: 7/13;
+  z-index: 25;
+  position: absolute;
+}
+.menu nav {
+  transform: rotate(-90deg);
+  top: 300px;
+  left: -300px;
+  position: absolute;
+  color: var(--blue);
+}
+.menu li:hover {
+  color: var(--pink);
 }
 .hero h1 {
   color: var(--pink);
@@ -119,10 +159,8 @@ nav {
   color: var(--pink);
 }
 #home nav {
-  color: var(--orange);
 }
 #home li:hover {
-  color: var(--blue);
 }
 
 /* About me */
@@ -131,11 +169,32 @@ nav {
   background-color: var(--blue);
 }
 .about-container {
-  grid-column: 1/ 9;
+  grid-column: 1/ 6;
   grid-row: 6/9;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.about-bg {
+  /* display: none; */
+  grid-column: 8/13;
+  margin-left: 5rem;
+  grid-row: 5/13;
+  border: 10px solid var(--dark);
+  background-color: var(--pink);
+  margin-top: -3rem;
+  height: 40rem;
+  width: 40rem;
+  border-radius: 100%;
+  transform: rotate(45deg);
+  position: relative;
+  z-index: 2;
+}
+.about-black {
+  grid-column: 10/13;
+  grid-row: 1/13;
+  background-color: var(--dark);
+  width: 2000px;
 }
 #about nav {
   color: var(--pink);

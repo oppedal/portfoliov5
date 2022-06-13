@@ -41,9 +41,10 @@ function resizeCanvasToDisplaySize() {
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 }
-camera.position.setX(-3);
-camera.position.setY(-0.3);
-camera.position.setZ(13);
+camera.position.setX(0.5);
+camera.position.setY(0.5);
+camera.position.setZ(4);
+
 renderer.render(scene, camera);
 //Geometry
 let head;
@@ -51,6 +52,8 @@ const loader = new GLTFLoader();
 loader.load('./3d/simplehead3.gltf', (gltf) => {
   head = gltf.scene;
   head.rotation.y = -1;
+  head.rotation.z = 1;
+
   scene.add(gltf.scene);
 });
 
